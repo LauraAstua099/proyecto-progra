@@ -1,27 +1,58 @@
 package Controlador;
 
+/**
+ * Clase Pago para manejar información de los pagos realizados.
+ */
 public class Pago {
-    private byte id;
-    private String nombre;
+    private String metodoPago; // Efectivo, Tarjeta, SINPE móvil
+    private double monto;      // Monto del pago
+    private String referencia; // Referencia de pago, si aplica
 
-    public Pago(byte id, String nombre) {
-        this.id = id;
-        this.nombre = nombre;
+    // Constructor por defecto
+    public Pago() {
     }
 
-    public byte getId() {
-        return id;
+    // Constructor con parámetros
+    public Pago(String metodoPago, double monto, String referencia) {
+        this.metodoPago = metodoPago;
+        this.monto = monto;
+        this.referencia = referencia;
     }
 
-    public void setId(byte id) {
-        this.id = id;
+    // Getters y setters
+    public String getMetodoPago() {
+        return metodoPago;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setMetodoPago(String metodoPago) {
+        this.metodoPago = metodoPago;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public double getMonto() {
+        return monto;
+    }
+
+    public void setMonto(double monto) {
+        this.monto = monto;
+    }
+
+    public String getReferencia() {
+        return referencia;
+    }
+
+    public void setReferencia(String referencia) {
+        this.referencia = referencia;
+    }
+
+    /**
+     * Representación en texto del pago
+     */
+    @Override
+    public String toString() {
+        return "Pago{" +
+               "metodoPago='" + metodoPago + '\'' +
+               ", monto=" + monto +
+               ", referencia='" + referencia + '\'' +
+               '}';
     }
 }

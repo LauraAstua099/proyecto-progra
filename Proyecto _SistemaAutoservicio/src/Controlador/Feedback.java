@@ -2,33 +2,40 @@ package Controlador;
 
 import java.util.Date;
 
+/**
+ * Clase Feedback para manejar opiniones de los clientes.
+ */
 public class Feedback {
-    private Cliente cliente;
-    private String feedback;
-    private Date fecha;
-    private double valoracion;
+    private String comentario;  // Comentario del cliente
+    private double valoracion;  // Valoración en una escala de 1 a 5
+    private Date fecha;         // Fecha del feedback
 
-    public Feedback(Cliente cliente, String feedback, Date fecha, double valoracion) {
-        this.cliente = cliente;
-        this.feedback = feedback;
-        this.fecha = fecha;
+    // Constructor por defecto
+    public Feedback() {
+    }
+
+    // Constructor con parámetros
+    public Feedback(String comentario, double valoracion, Date fecha) {
+        this.comentario = comentario;
         this.valoracion = valoracion;
+        this.fecha = fecha;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    // Getters y setters
+    public String getComentario() {
+        return comentario;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 
-    public String getFeedback() {
-        return feedback;
+    public double getValoracion() {
+        return valoracion;
     }
 
-    public void setFeedback(String feedback) {
-        this.feedback = feedback;
+    public void setValoracion(double valoracion) {
+        this.valoracion = valoracion;
     }
 
     public Date getFecha() {
@@ -39,11 +46,15 @@ public class Feedback {
         this.fecha = fecha;
     }
 
-    public double getValoracion() {
-        return valoracion;
-    }
-
-    public void setValoracion(double valoracion) {
-        this.valoracion = valoracion;
+    /**
+     * Representación en texto del feedback
+     */
+    @Override
+    public String toString() {
+        return "Feedback{" +
+               "comentario='" + comentario + '\'' +
+               ", valoracion=" + valoracion +
+               ", fecha=" + fecha +
+               '}';
     }
 }
