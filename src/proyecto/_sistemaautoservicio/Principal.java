@@ -1,6 +1,6 @@
 package proyecto._sistemaautoservicio;
 
-import Vista.*;
+import Vista.Menu;
 
 public class Principal {
 
